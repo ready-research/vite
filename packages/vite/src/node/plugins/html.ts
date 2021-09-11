@@ -31,7 +31,7 @@ import {
 const htmlProxyRE = /\?html-proxy&index=(\d+)\.js$/
 export const isHTMLProxy = (id: string): boolean => htmlProxyRE.test(id)
 
-const htmlCommentRE = /<!--[\s\S]*?-->/g
+const htmlCommentRE = /<!--(?:(?!<!--[\s\S])*?)-->/g
 const scriptModuleRE =
   /(<script\b[^>]*type\s*=\s*(?:"module"|'module')[^>]*>)(.*?)<\/script>/gims
 
